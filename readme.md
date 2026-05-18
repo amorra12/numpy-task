@@ -52,57 +52,7 @@ Output: -8.0
 
 ---
 
-## Sub-task 2 – Operazioni Elemento per Elemento
-
-Le operazioni elemento per elemento (element-wise) sono operazioni in cui una funzione viene applicata separatamente a ciascun elemento di una struttura dati (come un array o una matrice), producendo un risultato della stessa forma.
-
-### Requisito
-
-Implementa la funzione:
-
-```python
-operazioni_elemento_per_elemento(v1: list, v2: list) -> tuple
-```
-
-Questa funzione riceve in input due liste di numeri della stessa lunghezza e restituisce una tupla contenente quattro array NumPy: somma, differenza, prodotto e divisione.
-
-Ogni array contiene il risultato dell’operazione corrispondente applicata elemento per elemento alle due liste, rispettando l’ordine degli elementi.
-
-### Esempi
-
-```python id="oe1"
-Input: v1 = [1, 2, 3], v2 = [4, 5, 6]
-Output: (
-    array([5, 7, 9]),
-    array([-3, -3, -3]),
-    array([4, 10, 18]),
-    array([0.25, 0.4, 0.5])
-)
-```
-
-```python id="oe2"
-Input: v1 = [10, 20], v2 = [2, 5]
-Output: (
-    array([12, 25]),
-    array([8, 15]),
-    array([20, 100]),
-    array([5.0, 4.0])
-)
-```
-
-```python id="oe3"
-Input: v1 = [0, 0], v2 = [1, 1]
-Output: (
-    array([1, 1]),
-    array([-1, -1]),
-    array([0, 0]),
-    array([0., 0.])
-)
-```
-
----
-
-## Sub-task 3 – Prodotto Matriciale
+## Sub-task 2 – Prodotto Matriciale
 
 Il prodotto matriciale di due matrici calcola una nuova matrice dove ogni elemento in posizione `(i, j)` è il prodotto scalare della i-esima riga della prima matrice per la j-esima colonna della seconda matrice.
 
@@ -135,7 +85,7 @@ Output: array([[2, -2], [1, 1]])
 
 ---
 
-## Sub-task 4 – Risolvere un Sistema Lineare
+## Sub-task 3 – Risolvere un Sistema Lineare
 
 Un sistema di equazioni lineari del tipo `Ax = b` consiste in una matrice dei coefficienti `A`, un vettore dei termini noti `b` e un vettore incognito `x` di cui vogliamo calcolare i valori.
 
@@ -168,7 +118,7 @@ Output: array([2., 3.])
 
 ---
 
-## Sub-task 5 – Correlazione tra Matrici 2x2
+## Sub-task 4 – Correlazione tra Matrici 2x2
 
 La correlazione statistica (nello specifico, il coefficiente di Pearson) misura il grado di dipendenza lineare tra due insiemi di dati.
 
@@ -195,3 +145,51 @@ Output: 1.0  # Perfetta correlazione positiva
 Input: m1 = [[1, 2], [3, 4]], m2 = [[4, 3], [2, 1]]
 Output: -1.0  # Perfetta correlazione negativa
 ```
+---
+
+## Sub-task 5 – Operazioni Elemento per Elemento
+
+Le operazioni elemento per elemento (element-wise) sono operazioni in cui una funzione viene applicata separatamente a ciascun elemento di una struttura dati (come un array o una matrice), producendo un risultato della stessa forma.
+Le operazioni elemento per elemento si basano quindi sulle funzioni vettoriali di NumPy, che applicano automaticamente le operazioni in modalità element-wise su tutti gli elementi degli array.
+
+### Requisito
+
+Implementa la funzione:
+
+```python
+operazioni_elemento_per_elemento(v1: list) -> tuple
+```
+
+La funzione riceve in input una lista di numeri e, utilizzando le specifiche funzioni vettoriali di NumPy, deve calcolare:
+
+* seno elemento per elemento;
+* coseno elemento per elemento;
+* arcoseno elemento per elemento;
+* arcocoseno elemento per elemento;
+
+e restituire una tupla contenente i quattro array risultanti.
+
+Ogni operazione deve essere svolta usando le funzioni vettoriali di NumPy che operano in modalità element-wise, in modo da ottenere risultati della stessa forma degli input.
+
+### Esempi
+
+```python id="oe5_1"
+Input: v1 = [0, 0.5, 1, -0.5]
+Output: (
+    array([0.        , 0.47942554, 0.84147098, -0.47942554]),
+    array([1.        , 0.87758256, 0.54030231, 0.87758256]),
+    array([0.        , 0.52359878, 1.57079633, -0.52359878]),
+    array([1.57079633, 1.04719755, 0.        , 2.0943951 ])
+)
+```
+
+```python id="oe5_2"
+Input: v1 = [0.2, -0.8, 1.0]
+Output: (
+    array([ 0.19866933, -0.71735609, 0.84147098]),
+    array([ 0.98006658, 0.69670671, 0.54030231]),
+    array([0.20135792, -0.92729522, 1.57079633]),
+    array([1.36943841, 2.49809154, 0.        ])
+)
+```
+
