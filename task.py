@@ -4,6 +4,12 @@ import numpy as np
 
 def prodotto_scalare(v1: list, v2: list) -> float:
     """Sub-task 1: Prodotto Scalare."""
+    try:
+        res= np.inner(v1, v2)          #restiruisce il prod. scalare in res se non ci sono errori Value Error
+        return res
+    except ValueError:          #restituisce un errore se l'input è incompatibile con np.inner
+        return "Errore"
+
     pass
 
 def rango_matrice(m: list) -> int:
