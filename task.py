@@ -31,6 +31,7 @@ def operazioni_elemento_per_elemento(v1: list) -> tuple:
     pass
 
 
+
 def main():
     print("Sub-task 1:", prodotto_scalare([1, 2, 3], [4, 5, 6]))
     print("Sub-task 1:", rango_matrice([[1, 2], [3, 4]]))
